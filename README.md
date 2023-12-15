@@ -3,16 +3,14 @@ This is a middleware application for handling integration of variant analysis to
 as an iFrame in the Variant Analysis tool. It displays a view that takes the patient image as input and submits it to the GestaltMatcher service. It then retrieves the gene list with the 
 gestalt scores from the GestaltMatcher service and posts it back to the parent window (i.e. the tool embedding this application) 
 
-To run the django application, first create an enviornment and activate it:
+To run the django application, first set the environment using the pipfile:
 ```
-conda create --name pedia_mid_env
-conda activate pedia_mid_env
+pipenv shell
 ```
 
 Then install the requirements:
 ```
-pip install django
-pip install django_rest_framework
+pipenv sync
 ```
 
 Start the application server on a different port than Varfish, for example on port 7000:
