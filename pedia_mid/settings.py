@@ -120,8 +120,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-#####X_FRAME_OPTIONS = "ALLOW-FROM http://127.0.0.1:8000/"
-X_FRAME_OPTIONS = "CROSSORIGIN"
+X_FRAME_OPTIONS = "ALLOW-FROM http://127.0.0.1:8000/"
+#X_FRAME_OPTIONS = "*"
 
 # Configure URL to GestaltMatcher REST API
 VARFISH_GESTALT_REST_API_URL = "http://127.0.0.1:5000/predict"

@@ -51,7 +51,7 @@
 
         name = 'ImageName:' + {{imageName|safe}}[0] + '.' + {{imageName|safe}}[1];
         //console.log(name);
-        parent.postMessage(name,"*");
+        parent.postMessage(name,"http://127.0.0.1:8000");
 
         //console.log({{ jsonRes.suggested_genes_list|safe }});
         parent.postMessage({{ jsonRes.suggested_genes_list|safe }},"*");
