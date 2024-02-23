@@ -6,14 +6,14 @@ services:
       - '5000:5000'
     expose:
       - '5000'
-   classifier-app:
-   image: pedia-api:latest
+  classifier-app:
+   image: pedia-classifier-api:latest
    ports:
      - '9000:9000'
-    expose:
+   expose:
       - '9000'
   middleware-app:
-    image: middleware-api:latest
+    image: middleware-app:latest
     ports:
       - '7000:7000'
     expose:

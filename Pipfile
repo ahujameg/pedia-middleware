@@ -21,6 +21,11 @@ openpyxl = "*"
 pandas = "*"
 matplotlib = "*"
 gunicorn = "*"
+django-environ = "*"
+sphinx-jsonschema = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
+
 [dev-packages]
 
 [requires]

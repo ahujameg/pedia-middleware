@@ -11,16 +11,21 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load operating system environment variables and then prepare to use them
+env = environ.FileAwareEnv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-31k5re*41+an8na_6*jl8pzaaukz&+3$!ua(5bmxoeu5^l!j=1"
+# Generate new secret key using:
+# python manage.py shell -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="ChangeMe!!")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -71,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "pedia_mid.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Database
