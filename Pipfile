@@ -20,7 +20,7 @@ requests = "==2.31.0"
 openpyxl = "*"
 pandas = "*"
 matplotlib = "*"
-
+gunicorn = "*"
 [dev-packages]
 
 [requires]
