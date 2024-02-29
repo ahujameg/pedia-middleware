@@ -57,4 +57,17 @@ This is a middleware application for handling integration of variant analysis to
 
     app_usage
 
+.. raw:: latex
+
+    \part{References}
+
+.. toctree::
+    :maxdepth: 1
+    :caption: References
+    :name: references
+    :hidden:
+    :titlesonly:
+
+    references
+
 

@@ -1,0 +1,27 @@
+.. _references:
+
+=========================
+References and Citations
+=========================
+
+-----------------------
+GestaltMatcher
+-----------------------
+
+    * https://www.nature.com/articles/s41588-021-01010-x
+    * https://currentprotocols.onlinelibrary.wiley.com/doi/full/10.1002/cpz1.906
+
+PEDIA
+=======================
+
+    * https://www.nature.com/articles/s41436-019-0566-2
+
+CADA
+=======================
+
+    * https://academic.oup.com/nargab/article/3/3/lqab078/6363753
+
+VarFish
+=======================
+
+    * https://pubmed.ncbi.nlm.nih.gov/32338743/
