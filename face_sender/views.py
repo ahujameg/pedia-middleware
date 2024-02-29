@@ -37,7 +37,7 @@ class FaceSenderView(APIView):
                     },
                 )
             except requests.exceptions.RequestException as e:
-                messages.error(request, 'Error recieved from GestaltMatcher service:\n ' + str(e))
+                messages.error(request, 'Exception recieved from GestaltMatcher service:\n ' + str(e))
                 return render(request, 'index.html')
             if not res.status_code == 200:
                 messages.error(request, 'Error recieved from GestaltMatcher Service ')

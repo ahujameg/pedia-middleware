@@ -34,9 +34,20 @@ Alternatively, if you are unfamiliar with pipenv you can use the requirements.tx
 ```
 pip3 install -r requirements.txt
 ```
+### Update secret-key
+
+Generate a Django secret key using following command:
+```
+python manage.py shell -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+Paste the newly generated key in the DJANGO_SECRET_KEY enviornment variable in the 
+pedia_mid\settings.py file which contains the following line:
+```commandline
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="ChangeMe!!")
+```
 
 ### Application Startup
-Start the application server on a different port than Varfish, for example on port 7000:
+Start the application server on a different port other than the port used by the the parent application like Varfish, for example on port 7000:
 ```
 python3 manage.py runserver 7000
 ```
@@ -64,7 +75,7 @@ https://github.com/igsb/GestaltMatcher-Arc/tree/service#gestaltmatcher-rest-api
 Build the docker image 
     ```
     sudo docker build -t gm-api .
-    ```
+    
 #### PEDIA service
 To run the PEDIA service, get the code and follow the steps mentioned here:
 https://github.com/PEDIA-Charite/classifier#pedia-rest-api
@@ -74,8 +85,15 @@ Build the docker image
     sudo docker build -t pedia-classifier-api .
     ```
 
+#### Run Docker-compose
+
+Once the images of the services are ready, run the following command to start all of them in docker container.
+```
+sudo docker-compose up
+```
+
 ### Send image through PEDIA-Middleware
-1. Launch the PEDIA Middleware server in browser at http://127.0.0.1:7000
+1. Launch the PEDIA Middleware server in a browser at http://127.0.0.1:7000
 2. Click on 'Choose File' button and select the image to send.
 3. After choosing a file, the 'Submit to GestlatMatcher' button is enabled, click to submit.
 4. The image is sent to GestaltMatcher service API at http://127.0.0.1:5000/predict and a successful message or error 

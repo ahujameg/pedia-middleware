@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to PEDIA-Middleware’s documentation! &mdash; PEDIA-Middleware v1.0 documentation</title>
+  <title>Install Requirements &mdash; PEDIA-Middleware v1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -21,7 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Pre-requisites" href="pre_requisites.html" /> 
+    <link rel="next" title="Application Startup" href="app_startup.html" />
+    <link rel="prev" title="Pre-requisites" href="pre_requisites.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -32,7 +33,7 @@
 
           
           
-          <a href="#" class="icon icon-home">
+          <a href="index.html" class="icon icon-home">
             PEDIA-Middleware
           </a>
 <div role="search">
@@ -44,17 +45,11 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Installation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="pre_requisites.html">Pre-requisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_requirements.html">Install Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="app_startup.html">Application Startup</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Docker</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="docker_setup.html">Docker Setup</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Usage</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="app_usage.html">Application Usage</a></li>
 </ul>
 
@@ -64,17 +59,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">PEDIA-Middleware</a>
+          <a href="index.html">PEDIA-Middleware</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to PEDIA-Middleware’s documentation!</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Install Requirements</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/install_requirements.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -82,36 +77,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-pedia-middleware-s-documentation">
-<h1>Welcome to PEDIA-Middleware’s documentation!<a class="headerlink" href="#welcome-to-pedia-middleware-s-documentation" title="Link to this heading"></a></h1>
-<p>This is a middleware application for handling integration of variant analysis tools like VarFish with PEDIA (Prioritization of Exome data by image analysis). It can be independently embeded as an iFrame in the Variant Analysis tool. It displays a view that takes the patient image as input and submits it to the GestaltMatcher service. It then retrieves the gene list with the gestalt scores from the GestaltMatcher service and posts it back to the parent window (i.e. the tool embedding this application)</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/launch.png"><img alt="The launch page." src="_images/launch.png" style="width: 60%;" /></a>
-<figcaption>
-<p><span class="caption-text">This figure shows the landing page of PEDIA-Middleware application.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<div class="toctree-wrapper compound" id="installation">
+  <section id="install-requirements">
+<span id="id1"></span><h1>Install Requirements<a class="headerlink" href="#install-requirements" title="Link to this heading"></a></h1>
+<p>To run the django application, first set the environment using the pipfile:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pipenv<span class="w"> </span>shell
+</pre></div>
 </div>
-<div class="toctree-wrapper compound" id="docker">
+<p>Install the requirements:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pipenv<span class="w"> </span>sync
+</pre></div>
 </div>
-<div class="toctree-wrapper compound" id="usage">
+<p>Alternatively, if you are unfamiliar with pipenv you can use the requirements.txt file to install required packages.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<section id="update-secret-key">
+<h2>Update Secret-key<a class="headerlink" href="#update-secret-key" title="Link to this heading"></a></h2>
+<p>Generate a Django secret key using following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>python<span class="w"> </span>manage.py<span class="w"> </span>shell<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())&quot;</span>
+</pre></div>
+</div>
+<p>Paste the newly generated key in the DJANGO_SECRET_KEY enviornment variable in the
+pedia_midsettings.py file which contains the following line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">env</span><span class="p">(</span><span class="s2">&quot;DJANGO_SECRET_KEY&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;ChangeMe!!&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pre_requisites.html" class="btn btn-neutral float-right" title="Pre-requisites" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pre_requisites.html" class="btn btn-neutral float-left" title="Pre-requisites" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="app_startup.html" class="btn btn-neutral float-right" title="Application Startup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
