@@ -31,7 +31,7 @@ class FaceSenderView(APIView):
 
             try:
                 res = requests.post(
-                    settings.VARFISH_GESTALT_REST_API_URL,
+                    settings.GESTALT_MATCHER_REST_API_URL,
                     json={
                         "img": encoded_image_str,
                     },

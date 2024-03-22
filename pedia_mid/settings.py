@@ -30,7 +30,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default="ChangeMe!!")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1"]
 
 
 # Application definition
@@ -129,7 +129,7 @@ X_FRAME_OPTIONS = "ALLOW-FROM http://127.0.0.1:8000/"
 #X_FRAME_OPTIONS = "*"
 
 # Configure URL to GestaltMatcher REST API
-VARFISH_GESTALT_REST_API_URL = "http://127.0.0.1:5000/predict"
+GESTALT_MATCHER_REST_API_URL = "http://gm-api:5000/predict"
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True

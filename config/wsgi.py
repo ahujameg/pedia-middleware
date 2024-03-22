@@ -1,5 +1,5 @@
 """
-WSGI config for VarFish project.
+WSGI config for PEDIA-Middleware project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
@@ -19,7 +19,7 @@ import sys
 from django.core.wsgi import get_wsgi_application
 
 # This allows easy placement of apps within the interior
-# varfish directory.
+# pedia_mid directory.
 app_path = os.path.dirname(os.path.abspath(__file__)).replace("/config", "")
 sys.path.append(os.path.join(app_path, "pedia_mid"))
 
@@ -28,6 +28,7 @@ sys.path.append(os.path.join(app_path, "pedia_mid"))
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pedia_mid.settings")
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
